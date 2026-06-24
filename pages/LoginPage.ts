@@ -7,10 +7,12 @@ export class LoginPage {
         this.page = page;
     }
 
+    // Navigate to ParaBank login page
     async navigate() {
         await this.page.goto('https://parabank.parasoft.com/parabank/');
     }
 
+    // Login with provided credentials
     async login(username: string, password: string) {
         await this.page.locator('input[name="username"]').fill(username);
         await this.page.locator('input[name="password"]').fill(password);
