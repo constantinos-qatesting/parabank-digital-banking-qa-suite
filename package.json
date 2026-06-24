@@ -1,0 +1,23 @@
+{
+  "name": "parabank-digital-banking-qa-suite",
+  "version": "1.0.0",
+  "description": "End-to-end QA automation suite for a demo digital banking application using Playwright and TypeScript, covering login, accounts, transfers, payments, transactions, and form validations.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/constantinos-qatesting/parabank-digital-banking-qa-suite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/constantinos-qatesting/parabank-digital-banking-qa-suite/issues"
+  },
+  "homepage": "https://github.com/constantinos-qatesting/parabank-digital-banking-qa-suite#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.0"
+  }
+}
