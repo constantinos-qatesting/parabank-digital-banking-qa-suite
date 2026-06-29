@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { openDatabase } from '../../utils/database';
 
-test('Verify all accounts exist in the database', async () => {
+test('@database Verify all accounts exist in the database', async () => {
 
     // Open the SQLite database
     const db = await openDatabase();

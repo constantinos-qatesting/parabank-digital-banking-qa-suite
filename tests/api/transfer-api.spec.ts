@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test('User can transfer money through the API', async ({ request }) => {
+// Skipped because this endpoint requires an authenticated browser session.
+test.skip('@api User can transfer money through the API', async ({ request }) => {
 
     // Get all customer accounts
     const response = await request.get(

@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { TransferFundsPage } from '../pages/TransferFundsPage';
 
-test('User can transfer funds successfully', async ({ page }) => {
+test('@regression @ui User can transfer funds successfully', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const transferFundsPage = new TransferFundsPage(page);
 

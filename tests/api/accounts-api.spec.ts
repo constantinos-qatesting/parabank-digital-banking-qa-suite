@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('API returns customer accounts successfully', async ({ request }) => {
+test('@api API returns customer accounts successfully', async ({ request }) => {
     const response = await request.get(
         'https://parabank.parasoft.com/parabank/services/bank/customers/12212/accounts'
     );

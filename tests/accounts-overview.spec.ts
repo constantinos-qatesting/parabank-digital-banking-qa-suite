@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { AccountsOverviewPage } from '../pages/AccountsOverviewPage';
 
-test('User can view accounts overview', async ({ page }) => {
+test('@regression @ui User can view accounts overview', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const accountsOverviewPage = new AccountsOverviewPage(page);
 

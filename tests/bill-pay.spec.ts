@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { BillPayPage } from '../pages/BillPayPage';
 
-test('User can complete bill payment successfully', async ({ page }) => {
+test('@regression @ui User can complete bill payment successfully', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const billPayPage = new BillPayPage(page);
 

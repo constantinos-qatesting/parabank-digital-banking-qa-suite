@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 
-test('User can login successfully', async ({ page }) => {
+test('@smoke @ui User can login successfully', async ({ page }) => {
 
     // Create Login Page object
     const loginPage = new LoginPage(page);

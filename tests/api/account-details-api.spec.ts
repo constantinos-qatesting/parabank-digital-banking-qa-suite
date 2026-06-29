@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('API returns account details successfully', async ({ request }) => {
+test('@api API returns account details successfully', async ({ request }) => {
 
     // Get all customer accounts
     const accountsResponse = await request.get(
