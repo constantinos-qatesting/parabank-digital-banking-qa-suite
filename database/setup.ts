@@ -7,6 +7,11 @@ import { open } from 'sqlite';
 // Creates the banking database and inserts sample data
 async function setupDatabase() {
 
+    // Delete the existing database if it already exists
+    if (fs.existsSync('./database/banking.db')) {
+        fs.unlinkSync('./database/banking.db');
+    }
+
     // Open (or create) the SQLite database file
     const db = await open({
         filename: './database/banking.db',
