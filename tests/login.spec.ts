@@ -9,8 +9,11 @@ test('@smoke @ui User can login successfully', async ({ page }) => {
     // Open ParaBank homepage
     await loginPage.navigate();
 
-    // Login with valid credentials
-    await loginPage.login('john', 'demo');
+    // Login using credentials stored in the .env file
+    await loginPage.login(
+        process.env.PARABANK_USERNAME!,
+        process.env.PARABANK_PASSWORD!
+    );
 
     // Verify Accounts Overview page is displayed
     await expect(page).toHaveURL(/overview/);

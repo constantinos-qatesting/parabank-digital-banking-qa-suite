@@ -1,4 +1,7 @@
+import * as dotenv from 'dotenv';
 import { defineConfig, devices } from '@playwright/test';
+
+dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
@@ -23,7 +26,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: 'https://parabank.parasoft.com/parabank',
+    baseURL: process.env.BASE_URL,
 
     trace: 'on-first-retry',
 

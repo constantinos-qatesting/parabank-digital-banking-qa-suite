@@ -8,7 +8,12 @@ test('@regression @ui User can submit a loan request successfully', async ({ pag
 
     // Login to the banking application
     await loginPage.navigate();
-    await loginPage.login('john', 'demo');
+
+    // Login using credentials stored in the .env file
+    await loginPage.login(
+        process.env.PARABANK_USERNAME!,
+        process.env.PARABANK_PASSWORD!
+    );
 
     // Open Request Loan page
     await requestLoanPage.open();

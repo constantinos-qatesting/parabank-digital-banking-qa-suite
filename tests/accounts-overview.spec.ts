@@ -8,7 +8,12 @@ test('@regression @ui User can view accounts overview', async ({ page }) => {
 
     // Login to the banking application
     await loginPage.navigate();
-    await loginPage.login('john', 'demo');
+
+    // Login using credentials stored in the .env file
+    await loginPage.login(
+        process.env.PARABANK_USERNAME!,
+        process.env.PARABANK_PASSWORD!
+    );
 
     // Open and verify Accounts Overview
     await accountsOverviewPage.open();

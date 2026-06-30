@@ -8,8 +8,15 @@ test('@smoke @ui User can logout successfully', async ({ page }) => {
 
     // Login to the banking application
     await loginPage.navigate();
-    await loginPage.login('john', 'demo');
 
+    // Login using credentials stored in the .env file
+
+    // Login using credentials stored in the .env file
+    await loginPage.login(
+        process.env.PARABANK_USERNAME!,
+        process.env.PARABANK_PASSWORD!
+    );
+    
     // Logout from the application
     await logoutPage.logout();
 
