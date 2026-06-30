@@ -1,114 +1,78 @@
-# 🏦 ParaBank Digital Banking QA Automation Suite
+# 🏦 ParaBank Digital Banking QA Suite
 
-A complete QA Automation framework built with **Playwright** and **TypeScript** for a digital banking application.
+A comprehensive Playwright + TypeScript automation framework built for the ParaBank demo banking application.
 
-This project demonstrates modern Quality Assurance practices, including **UI automation, API testing, SQL database validation, Page Object Model (POM)**, and reusable test utilities.
+This project demonstrates modern QA automation practices by combining **UI testing**, **API testing**, **database validation**, and **Continuous Integration (GitHub Actions)** into a single automation framework.
 
 ---
 
-# 🚀 Technologies
+## 🚀 Technologies
 
 - Playwright
 - TypeScript
 - Node.js
-- SQL
 - SQLite
-- Git
-- GitHub
+- GitHub Actions
+- dotenv
 
 ---
 
-# 📂 Project Structure
+## ✅ Features
 
-```text
-├── database
-│   ├── banking.db
-│   ├── schema.sql
-│   ├── seed.sql
-│   └── setup.ts
-│
-├── pages
-│   ├── LoginPage.ts
-│   ├── AccountsOverviewPage.ts
-│   ├── TransferFundsPage.ts
-│   ├── BillPayPage.ts
-│   ├── FindTransactionsPage.ts
-│   ├── RequestLoanPage.ts
-│   └── LogoutPage.ts
-│
-├── tests
-│   ├── api
-│   ├── database
-│   ├── e2e
-│   └── ui
-│
-├── utils
-│   └── database.ts
-│
-└── playwright.config.ts
-```
-
----
-
-# ✅ Test Coverage
-
-## UI Tests
-
+### UI Automation
 - Login
-- Accounts Overview
-- Transfer Funds
-- Bill Payment
-- Find Transactions
-- Request Loan
 - Logout
+- Accounts Overview
+- Bill Payment
+- Request Loan
+- Transfer Funds
+- Find Transactions
+
+### API Testing
+- Retrieve customer accounts
+- Retrieve account details
+- Transfer funds through API
+
+### Database Testing
+- Verify customer accounts
+- Verify account balances
+- Verify transfer transactions
+
+### End-to-End Testing
+- Perform UI transfer
+- Validate transaction directly in SQLite database
+
+### CI/CD
+- GitHub Actions automatically:
+  - Installs dependencies
+  - Creates a fresh SQLite database
+  - Executes Playwright tests
+  - Reports the test results
 
 ---
 
-## API Tests
+## 📁 Project Structure
 
-- Retrieve Customer Accounts
-- Retrieve Account Details
-- Transfer Funds API *(requires authenticated session and is currently skipped)*
-
----
-
-## Database Tests
-
-- Verify all accounts exist
-- Verify customer account information
-- Verify transfer transaction exists
-
----
-
-# 🏷 Test Tags
-
-Run all Smoke tests
-
-```bash
-npx playwright test --grep "@smoke"
 ```
-
-Run all API tests
-
-```bash
-npx playwright test --grep "@api"
-```
-
-Run all Database tests
-
-```bash
-npx playwright test --grep "@database"
-```
-
-Run all Regression tests
-
-```bash
-npx playwright test --grep "@regression"
+pages/
+database/
+tests/
+ ├── api/
+ ├── database/
+ └── e2e/
+utils/
+.github/workflows/
 ```
 
 ---
 
-# ▶ Running the Project
+## ▶️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/constantinos-qatesting/parabank-digital-banking-qa-suite.git
+```
 
 Install dependencies
 
@@ -122,50 +86,99 @@ Install Playwright browsers
 npx playwright install
 ```
 
+Create the SQLite database
+
+```bash
+npx ts-node database/setup.ts
+```
+
+---
+
+## ▶️ Running Tests
+
 Run all tests
 
 ```bash
 npx playwright test
 ```
 
-Run a single test
+Run Smoke tests
 
 ```bash
-npx playwright test tests/login.spec.ts
+npx playwright test --grep "@smoke"
 ```
 
-Open the HTML report
+Run API tests
 
 ```bash
-npx playwright show-report
+npx playwright test --grep "@api"
+```
+
+Run Database tests
+
+```bash
+npx playwright test --grep "@database"
+```
+
+Run Chromium only
+
+```bash
+npx playwright test --project=chromium
 ```
 
 ---
 
-# 📊 QA Practices Demonstrated
+## 🔐 Environment Variables
+
+Create a `.env` file in the project root.
+
+Example:
+
+```env
+USERNAME=your_username
+PASSWORD=your_password
+```
+
+The `.env` file is ignored by Git and should never contain real credentials.
+
+---
+
+## ⚙️ GitHub Actions
+
+The project includes a GitHub Actions workflow that automatically:
+
+- Installs dependencies
+- Installs Playwright browsers
+- Recreates the SQLite database
+- Executes Playwright tests on every push
+
+---
+
+## 💡 Skills Demonstrated
 
 - Page Object Model (POM)
 - UI Automation
-- API Testing
-- SQL Database Validation
-- Test Tagging
-- Reusable Utilities
-- Dynamic Data Handling
-- HTML Reporting
-- Banking Workflow Validation
+- API Automation
+- Database Validation
+- End-to-End Testing
+- SQLite Integration
+- Environment Variables
+- GitHub Actions (CI)
+- Cross-platform Development (Windows & Linux)
+- TypeScript
+- Playwright Best Practices
 
 ---
 
-# ⚠ Notes
+## 📌 Future Improvements
 
-- ParaBank is a public demo application and may occasionally be unavailable or unstable.
-- The Transfer API test is intentionally skipped because it requires an authenticated session.
-- SQLite is used locally to demonstrate SQL validation techniques and is independent of the public ParaBank application.
+- Docker support
+- Test data generation
+- Allure reporting
+- Performance testing
+- Visual regression testing
+- Parallel GitHub Actions matrix
 
 ---
 
-# 👨‍💻 Author
-
-**Constantinos Kyrri**
-
-Thank you !!!
+Developed by **Constantinos Kyrri**
